@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+
+.answers-button {
+display: flex;
+width: 100%;
+flex-wrap: wrap;
+margin-bottom: 25px;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.answer-button__default {
+width: 48%;
+margin: 5px;
+padding: 1rem 2rem;
+background-color: #9268FF;
+color: #fff;
+cursor: pointer;
+border-radius: 10px;
+-webkit-appearance: none;
+-moz-appearance: none;
+border: 2px solid #9268FF;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+
+.answer-button__default:focus {
+outline: 1px solid #9268FF;
+outline-offset: -4px;
+}
+
+.answer-button__default:focus, .answer-button__default:hover {
+background: #5630B7;
+border: 2px solid #5630B7;
+}
+
+
+
+.answer-button__correct {
+  width: 48%;
+  margin: 5px;
+  padding: 1rem 2rem;
+  background-color:  #23D9B7;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 2px solid  #23D9B7;
+
+}
+
+.answer-button__correct:focus {
+  outline: 1px solid #23D9B7;
+  outline-offset: -4px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .answer-button__correct:focus, .answer-button__correct:hover {
+  background: rgb(29, 185, 157);
+  border: 2px solid rgb(29, 185, 157);
   }
-  to {
-    transform: rotate(360deg);
+
+
+
+
+.answer-button__incorrect {
+  width: 48%;
+  margin: 5px;
+  padding: 1rem 2rem;
+  background-color:  #F20732;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 2px solid  #F20732;
+
+}
+
+.answer-button__incorrect:focus {
+  outline: 1px solid #F20732;
+  outline-offset: -4px;
   }
+
+  .answer-button__incorrect:focus, .answer-button__incorrect:hover {
+  background: rgb(180, 7, 39);
+  border: 2px solid rgb(180, 7, 39);
+  }
+
+
+
+.next-button {
+width: 100%;
+margin: 5px;
+padding: 1rem 2rem;
+background-color: #F1F9FF;
+color: #A16CFF;
+cursor: pointer;
+border-radius: 10px;
+-webkit-appearance: none;
+-moz-appearance: none;
+border: 2px solid #9268FF;
+}
+
+.next-button:focus {
+outline: 1px solid #9268FF;
+outline-offset: -4px;
+}
+
+.next-button:focus, .next-button:hover {
+background: #5630B7;
+border: 2px solid #5630B7;
+color: #F1F9FF;
 }
