@@ -3,6 +3,7 @@
   height: 450px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   opacity: .65;
   color: white;
   font-weight: bold;
@@ -11,6 +12,7 @@
 
 .question-text {
   text-align: center;
+  margin: 1em 0;
 }
 
 .answers-button {

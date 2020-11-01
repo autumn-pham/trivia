@@ -68,7 +68,9 @@ class Main extends React.Component {
     if (finish === false) {
       return (
         <div>
+          <hr/>
           <h3 className="question-text">{currentQuestion.question}</h3>
+          <hr/>
           <div className="answers-button">
             {
               currentQuestion.answerOptions.map((q, i) => (
