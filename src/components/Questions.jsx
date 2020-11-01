@@ -60,7 +60,7 @@ export const questions = [
     "answerOptions": ["Belgium", "London", "Munich", "Paris"]
   },
   {
-    "questionText": "Where would you find the Sea of Tranquility?",
+    "question": "Where would you find the Sea of Tranquility?",
     "answer": "The Moon",
     "answerOptions": ["California", "China", "Siberia", "The Moon"]
   },

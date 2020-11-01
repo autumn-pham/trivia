@@ -10,7 +10,7 @@ class Main extends React.Component {
     disabled: false,
     correct: '',
     incorrect: '',
-    finish: 'false'
+    finish: false
   };
 
   nextQuestion() {
@@ -40,53 +40,52 @@ class Main extends React.Component {
     this.setState({
       score: score,
       disabled: true,
-   correct: 'answer-button__correct',
-   defaultClass: ''
-})
-}else {
-   this.setState({
-       incorrect: 'answer-button__incorrect',
-       defaultClass: '',
-       disabled: true,
-       score: score,
-       correct: 'answer-button__correct'
-   })
-}
+      correct: 'answer-button__correct',
+      defaultClass: ''
+    })
+    }else {
+     this.setState({
+         incorrect: 'answer-button__incorrect',
+         defaultClass: '',
+         disabled: true,
+         score: score,
+         correct: 'answer-button__correct'
+     })
+   }
+  }
 
-}
-
-renderButton() {
-      if (this.state.index < 10) {
-          return <button className="next-button" onClick={ event => this.nextQuestion()} >Next</button>
-      }else {
-          return <button onClick={ event => this.finish()} className="next-button">Finish</button>
-      }
+  nextButton() {
+    if (this.state.index < this.state.questions.length - 1) {
+      return <button className="next-button" onClick={ event => this.nextQuestion()} >NEXT</button>
+    }else{
+      return <button onClick={ event => this.finish()} className="next-button">FINISH</button>
+    }
   }
 
   render() {
     const {questions, index, correct, incorrect, finish, score } = this.state
     const currentQuestion = questions[index]
-     // if (finish === false) {
-    return (
-      <div>
-        <h3>{currentQuestion.question}</h3>
-        <div className="answers-button">
-          {
-            currentQuestion.answerOptions.map((q, i) => (
-             <button disabled={this.state.disabled} ref="btn" key={i} id={"answer"+i} className={`${ q ===  currentQuestion.answer ? correct : incorrect } answer-button__default`}onClick={ (event) => this.checkAnswer(event)}>
-               {q}
-            </button>
-           ))
-           }
+    if (finish === false) {
+      return (
+        <div>
+          <h3 className="question-text">{currentQuestion.question}</h3>
+          <div className="answers-button">
+            {
+              currentQuestion.answerOptions.map((q, i) => (
+               <button disabled={this.state.disabled} ref="btn" key={i} id={"answer"+i} className={`${ q ===  currentQuestion.answer ? correct : incorrect } answer-button__default`}onClick={ (event) => this.checkAnswer(event)}>
+                 {q}
+              </button>
+             ))
+             }
+          </div>
+           {this.nextButton()}
         </div>
-         {this.renderButton()}
-      </div>
-    )
-    // } else {
-    //   return (
-    //     <div>Your score is {score}</div>
-    //   )
-    // }
+      )
+    } else {
+      return (
+        <div>Your score is {score}</div>
+      )
+    }
   }
 }
 
